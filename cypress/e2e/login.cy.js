@@ -1,6 +1,5 @@
 describe('Registro de Login', () => {
 
-  // -------------- CENÁRIO 1 --------------------
   class LoginForm {
     elements = {
       emailInput: () => cy.get('#email'),
@@ -24,6 +23,8 @@ describe('Registro de Login', () => {
   }
 
   const loginForm = new LoginForm()
+  
+  // -------------- CENÁRIO 1 --------------------
   
   describe('Login com credenciais vazias', () => {
     const input = {
