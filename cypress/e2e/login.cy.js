@@ -1,4 +1,4 @@
-import { loginForm, input_1, input_2, input_3 } from "./page_objects/login_page.cy"
+import { loginForm, input_login_valido, input_vazio, input_login_invalido } from "./page_objects/login_page.cy"
 
 describe('Registro de Login', () => {
 
@@ -14,12 +14,12 @@ describe('Registro de Login', () => {
       cy.visit('/')
     })
 
-    it(`When I enter "${input_1.email}" in the email field`, () => {
-      loginForm.typeEmail(input_1.email)
+    it(`When I enter "${input_vazio.email}" in the email field`, () => {
+      loginForm.typeEmail(input_vazio.email)
     })
 
-    it(`Then I enter "${input_1.senha}" in the senha field`, () => {
-      loginForm.typeSenha(input_1.senha)
+    it(`Then I enter "${input_vazio.senha}" in the senha field`, () => {
+      loginForm.typeSenha(input_vazio.senha)
     })
 
     it('Then I click the submit button', () => {
@@ -46,12 +46,12 @@ describe('Registro de Login', () => {
       cy.visit('/')
     })
 
-    it(`When I enter "${input_2.email}" in the email field`, () => {
-      loginForm.typeEmail(input_2.email)
+    it(`When I enter "${input_login_invalido.email}" in the email field`, () => {
+      loginForm.typeEmail(input_login_invalido.email)
     })
 
-    it(`Then I enter "${input_2.senha}" in the senha field`, () => {
-      loginForm.typeSenha(input_2.senha)
+    it(`Then I enter "${input_login_invalido.senha}" in the senha field`, () => {
+      loginForm.typeSenha(input_login_invalido.senha)
     })
 
     it('Then I click the submit button', () => {
@@ -76,12 +76,12 @@ describe('Registro de Login', () => {
       cy.visit('/')
     })
 
-    it(`When I enter "${input_3.email}" in the email field`, () => {
-      loginForm.typeEmail(input_3.email)
+    it(`When I enter "${input_login_valido.email}" in the email field`, () => {
+      loginForm.typeEmail(input_login_valido.email)
     })
 
-    it(`Then I enter "${input_3.senha}" in the senha field`, () => {
-      loginForm.typeSenha(input_3.senha)
+    it(`Then I enter "${input_login_valido.senha}" in the senha field`, () => {
+      loginForm.typeSenha(input_login_valido.senha)
     })
 
     it('Then I click the submit  button', () => {

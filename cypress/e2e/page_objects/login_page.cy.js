@@ -24,21 +24,17 @@ class LoginForm {
 
 export const loginForm = new LoginForm()
 
-export const input_1 = {
+export const input_vazio = {
     email: '',
     senha: ''
 }
 
-export const input_2 = {
+export const input_login_invalido = {
     email: faker.internet.email(),
     senha: faker.internet.password()
 }
 
-export const input_3 = {
+export const input_login_valido = {
     email: 'testecy@gmail.com',
     senha: '12345',
-}
-export const input = {
-    email: 'testecy7@gmail.com',
-    senha: '12345'
 }
