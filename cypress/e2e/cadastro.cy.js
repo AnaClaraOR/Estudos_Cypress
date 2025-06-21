@@ -1,5 +1,5 @@
 import { cadastroForm, input_cadastro } from "./page_objects/cadastro_page.cy";
-import { loginForm, input } from "./page_objects/login_page.cy"
+import { loginForm } from "./page_objects/login_page.cy"
 
 
 describe('Cadastro de usuário', () => {
@@ -24,12 +24,12 @@ describe('Cadastro de usuário', () => {
             cadastroForm.typeNome(input_cadastro.nome)
         });
 
-        it(`Then I enter "${input.email}" in the email field`, () => {
-            loginForm.typeEmail(input.email)
+        it(`Then I enter "${input_cadastro.email}" in the email field`, () => {
+            loginForm.typeEmail(input_cadastro.email)
         });
 
-        it(`Then I enter "${input.senha}" in the senha field`, () => {
-            loginForm.typeSenha(input.senha)
+        it(`Then I enter "${input_cadastro.senha}" in the senha field`, () => {
+            loginForm.typeSenha(input_cadastro.senha)
         });
 
         it('Then I click the cadastrar button', () => {
@@ -61,12 +61,12 @@ describe('Cadastro de usuário', () => {
             cadastroForm.typeNome(input_cadastro.nome)
         });
 
-        it(`Then I enter "${input.email}" in the email field`, () => {
-            loginForm.typeEmail(input.email)
+        it(`Then I enter "${input_cadastro.email}" in the email field`, () => {
+            loginForm.typeEmail(input_cadastro.email)
         });
 
-        it(`Then I enter "${input.senha}" in the senha field`, () => {
-            loginForm.typeSenha(input.senha)
+        it(`Then I enter "${input_cadastro.senha}" in the senha field`, () => {
+            loginForm.typeSenha(input_cadastro.senha)
         });
 
         it('Then I click the cadastrar button', () => {

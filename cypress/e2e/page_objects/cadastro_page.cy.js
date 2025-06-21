@@ -1,3 +1,5 @@
+import { faker } from '@faker-js/faker'
+
 class CadastroForm {
     elements = {
         nomeInput: () => cy.get('#nome'),
@@ -20,5 +22,8 @@ class CadastroForm {
 export const cadastroForm = new CadastroForm()
 
 export const input_cadastro = {
-    nome: 'Teste Cy 7'
+    nome: faker.person.fullName(),
+    email: faker.internet.email(),
+    senha: faker.internet.password()
 }
+

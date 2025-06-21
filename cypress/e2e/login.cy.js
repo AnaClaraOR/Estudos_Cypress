@@ -58,7 +58,7 @@ describe('Registro de Login', () => {
       loginForm.clickSubmit()
     })
 
-    it('hen I should see "Problemas com o login do usuário"', () => {
+    it('When I should see "Problemas com o login do usuário"', () => {
       loginForm.elements.alerta_error().should('contains.text', 'Problemas com o login do usuário')
     })
 

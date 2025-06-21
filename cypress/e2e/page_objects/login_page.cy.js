@@ -1,3 +1,4 @@
+import { faker } from '@faker-js/faker'
 
 class LoginForm {
     elements = {
@@ -29,8 +30,8 @@ export const input_1 = {
 }
 
 export const input_2 = {
-    email: 'teste_invalido@gmail.com',
-    senha: '12345'
+    email: faker.internet.email(),
+    senha: faker.internet.password()
 }
 
 export const input_3 = {
