@@ -33,8 +33,3 @@ export const input_login_invalido = {
     email: faker.internet.email(),
     senha: faker.internet.password()
 }
-
-export const input_login_valido = {
-    email: 'testecy@gmail.com',
-    senha: '12345',
-}

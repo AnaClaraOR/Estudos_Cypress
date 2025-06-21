@@ -21,9 +21,14 @@ class CadastroForm {
 
 export const cadastroForm = new CadastroForm()
 
-export const input_cadastro = {
-    nome: faker.person.fullName(),
-    email: faker.internet.email(),
-    senha: faker.internet.password()
+export const input_cadastro_existente = {
+    nome: 'Teste Cypress',
+    email: 'testecy@gmail.com',
+    senha: '12345',
 }
 
+export const input_cadastro_novo = {
+    nome: faker.person.fullName(),
+    email: faker.internet.email(),
+    senha: faker.internet.password(),
+}

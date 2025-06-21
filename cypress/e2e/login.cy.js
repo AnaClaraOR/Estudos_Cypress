@@ -1,14 +1,15 @@
-import { loginForm, input_login_valido, input_vazio, input_login_invalido } from "./page_objects/login_page.cy"
+import { input_cadastro_existente } from "./page_objects/cadastro_page.cy"
+import { loginForm, input_vazio, input_login_invalido } from "./page_objects/login_page.cy"
 
 describe('Registro de Login', () => {
 
+  before(() =>{
+    cy.visit('/logout')
+  })
+  
   // -------------- CENÁRIO 1 --------------------
 
   describe('Login com credenciais vazias', () => {
-
-    after(() => {
-      cy.clearAllLocalStorage()
-    })
 
     it('Given I am on the login page', () => {
       cy.visit('/')
@@ -76,21 +77,20 @@ describe('Registro de Login', () => {
       cy.visit('/')
     })
 
-    it(`When I enter "${input_login_valido.email}" in the email field`, () => {
-      loginForm.typeEmail(input_login_valido.email)
+    it(`When I enter "${input_cadastro_existente.email}" in the email field`, () => {
+      loginForm.typeEmail(input_cadastro_existente.email)
     })
 
-    it(`Then I enter "${input_login_valido.senha}" in the senha field`, () => {
-      loginForm.typeSenha(input_login_valido.senha)
+    it(`Then I enter "${input_cadastro_existente.senha}" in the senha field`, () => {
+      loginForm.typeSenha(input_cadastro_existente.senha)
     })
 
     it('Then I click the submit  button', () => {
       loginForm.clickSubmit()
     })
 
-    it(`Then I should see "Bem vindo, Teste Cypress"`, () => {
-      loginForm.elements.alerta_sucesso().should('contains.text', 'Bem vindo, Teste Cypress')
-
+    it(`Then I should see "Bem vindo, ${input_cadastro_existente.nome}"`, () => {
+      loginForm.elements.alerta_sucesso().should('contains.text', `Bem vindo, ${input_cadastro_existente.nome}`)
     })
 
   })
