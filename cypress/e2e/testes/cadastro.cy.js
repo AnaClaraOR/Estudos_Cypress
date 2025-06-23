@@ -1,6 +1,6 @@
 import { globalForm } from "../global_keywords/global_keywords";
-import { cadastroForm, input_cadastro_existente, input_cadastro_novo } from "../page_objects/cadastro_page.cy";
-import { loginForm } from "../page_objects/login_page.cy"
+import { cadastroForm, input_cadastro_existente, input_cadastro_novo } from "../page_objects/cadastro_page";
+import { loginForm } from "../page_objects/login_page"
 
 
 describe('Cadastro de usuário', () => {

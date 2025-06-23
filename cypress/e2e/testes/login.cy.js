@@ -1,6 +1,6 @@
 import { globalForm } from "../global_keywords/global_keywords"
-import { input_cadastro_existente } from "../page_objects/cadastro_page.cy"
-import { loginForm, input_vazio, input_login_invalido } from "../page_objects/login_page.cy"
+import { input_cadastro_existente } from "../page_objects/cadastro_page"
+import { loginForm, input_vazio, input_login_invalido } from "../page_objects/login_page"
 
 describe('Registro de Login', () => {
 
@@ -79,7 +79,7 @@ describe('Registro de Login', () => {
       globalForm.typeSenha(input_cadastro_existente.senha)
     })
 
-    it('Then I click the submit  button', () => {
+    it('Then I click the submit button', () => {
       loginForm.clickSubmit()
     })
 
