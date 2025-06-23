@@ -1,8 +1,13 @@
-import { cadastroForm, input_cadastro_existente, input_cadastro_novo } from "./page_objects/cadastro_page.cy";
-import { loginForm } from "./page_objects/login_page.cy"
+import { globalForm } from "../global_keywords/global_keywords";
+import { cadastroForm, input_cadastro_existente, input_cadastro_novo } from "../page_objects/cadastro_page.cy";
+import { loginForm } from "../page_objects/login_page.cy"
 
 
 describe('Cadastro de usuário', () => {
+
+    before(() => {
+        cy.visit('/logout')
+    })
 
     //------------------CENÁRIO 1------------------------
     // Trecho comentado devido a falta de remoção de usuário, então a cada execução 
@@ -23,11 +28,11 @@ describe('Cadastro de usuário', () => {
     //     });
 
     //     it(`Then I enter "${input_cadastro_novo.email}" in the email field`, () => {
-    //         loginForm.typeEmail(input_cadastro_novo.email)
+    //         globalForm.typeEmail(input_cadastro_novo.email)
     //     });
 
     //     it(`Then I enter "${input_cadastro_novo.senha}" in the senha field`, () => {
-    //         loginForm.typeSenha(input_cadastro_novo.senha)
+    //         globalForm.typeSenha(input_cadastro_novo.senha)
     //     });
 
     //     it('Then I click the cadastrar button', () => {
@@ -35,7 +40,7 @@ describe('Cadastro de usuário', () => {
     //     });
 
     //     it('Then I should see "Usuário inserido com sucesso"', () => {
-    //         loginForm.elements.alerta_sucesso().should('contains.text', 'Usuário inserido com sucesso')
+    //         globalForm.global_elements.alerta_sucesso().should('contains.text', 'Usuário inserido com sucesso')
     //     });
     // })
 
@@ -44,7 +49,6 @@ describe('Cadastro de usuário', () => {
 
     describe('Realizar cadastro com email existente', () => {
 
-        
         it('Given I am on the login page', () => {
             cy.visit('/')
         });
@@ -59,13 +63,13 @@ describe('Cadastro de usuário', () => {
         });
 
         it(`Then I enter "${input_cadastro_novo.email}" in the email field`, () => {
-            //loginForm.typeEmail(input_cadastro_novo.email)
-            loginForm.typeEmail(input_cadastro_existente.email)
+            //globalForm.typeEmail(input_cadastro_novo.email)
+            globalForm.typeEmail(input_cadastro_existente.email)
         });
 
         it(`Then I enter "${input_cadastro_novo.senha}" in the senha field`, () => {
-            //loginForm.typeSenha(input_cadastro_novo.senha)
-            loginForm.typeSenha(input_cadastro_existente.senha)
+            //globalForm.typeSenha(input_cadastro_novo.senha)
+            globalForm.typeSenha(input_cadastro_existente.senha)
         });
 
         it('Then I click the cadastrar button', () => {
@@ -73,7 +77,7 @@ describe('Cadastro de usuário', () => {
         });
 
         it('Then I should see "Endereço de email já utilizado"', () => {
-            loginForm.elements.alerta_error().should('contains.text', 'Endereço de email já utilizado')
+            globalForm.global_elements.alerta_error().should('contains.text', 'Endereço de email já utilizado')
         });
     })
 })
